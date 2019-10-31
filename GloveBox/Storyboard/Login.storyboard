@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BsR-Ob-Qy1">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="Odw-So-VrD">
+            <objects>
+                <viewController id="BsR-Ob-Qy1" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vN0-xE-rsm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CarCompanion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kzG-m1-cZL">
+                                <rect key="frame" x="16" y="60" width="382" height="55"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="40"/>
+                                <color key="textColor" red="0.37647058823529411" green="0.52941176470588236" blue="0.83529411764705885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="od9-EW-ID5">
+                                <rect key="frame" x="16" y="725" width="382" height="37"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qaV-7l-qfq" customClass="LoginButton" customModule="CarCompanion" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="166" height="37"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
+                                        <state key="normal" title="Sign Up"/>
+                                        <connections>
+                                            <segue destination="eRr-g7-3Ia" kind="presentation" modalPresentationStyle="fullScreen" id="cW0-B4-qF7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vWo-AA-bEG" customClass="LoginButton" customModule="CarCompanion" customModuleProvider="target">
+                                        <rect key="frame" x="216" y="0.0" width="166" height="37"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
+                                        <state key="normal" title="Login"/>
+                                        <connections>
+                                            <segue destination="Su5-tM-f23" kind="presentation" modalPresentationStyle="fullScreen" id="bq3-2c-51u"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.11372549019607843" green="0.29411764705882354" blue="0.65490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="sK6-5q-MSr" firstAttribute="bottom" secondItem="od9-EW-ID5" secondAttribute="bottom" constant="100" id="15m-py-KLx"/>
+                            <constraint firstItem="od9-EW-ID5" firstAttribute="leading" secondItem="sK6-5q-MSr" secondAttribute="leading" constant="16" id="1Yp-KR-Bxl"/>
+                            <constraint firstItem="sK6-5q-MSr" firstAttribute="trailing" secondItem="kzG-m1-cZL" secondAttribute="trailing" constant="16" id="DtV-i1-Vfn"/>
+                            <constraint firstItem="kzG-m1-cZL" firstAttribute="leading" secondItem="sK6-5q-MSr" secondAttribute="leading" constant="16" id="g7a-XZ-Pfx"/>
+                            <constraint firstItem="sK6-5q-MSr" firstAttribute="trailing" secondItem="od9-EW-ID5" secondAttribute="trailing" constant="16" id="lUt-oc-Eqh"/>
+                            <constraint firstItem="kzG-m1-cZL" firstAttribute="top" secondItem="sK6-5q-MSr" secondAttribute="top" constant="16" id="rST-xh-X64"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sK6-5q-MSr"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r02-QK-GRW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="137.94642857142856"/>
+        </scene>
+        <!--Sign UpVC-->
+        <scene sceneID="1nn-so-5Ba">
+            <objects>
+                <viewController id="eRr-g7-3Ia" customClass="SignUpVC" customModule="CarCompanion" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O3d-CO-3df">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FvB-CA-oLa">
+                                <rect key="frame" x="368" y="44" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="iAZ-Cc-x4j"/>
+                                    <constraint firstAttribute="height" constant="30" id="uet-T6-mcc"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="Close"/>
+                                <connections>
+                                    <action selector="closeBtnPressed:" destination="eRr-g7-3Ia" eventType="touchUpInside" id="kvW-oc-ulv"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FOV-HN-Tkb">
+                                <rect key="frame" x="82" y="64" width="250" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="eyP-d5-aGj"/>
+                                    <constraint firstAttribute="height" constant="55" id="fwz-OV-yoa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="40"/>
+                                <color key="textColor" red="0.37647058823529411" green="0.52941176470588236" blue="0.83529411764705885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZMp-pd-Ucq">
+                                <rect key="frame" x="0.0" y="135" width="414" height="240"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KI0-2F-aUW">
+                                        <rect key="frame" x="20" y="20" width="374" height="200"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h2N-ZT-cfO" customClass="LoginTextField" customModule="CarCompanion" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="name"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YS6-Cd-gdW" customClass="LoginTextField" customModule="CarCompanion" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="70" width="374" height="60"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" textContentType="email"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ark-nF-M0r" customClass="LoginTextField" customModule="CarCompanion" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="140" width="374" height="60"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.37647058823529411" green="0.52941176470588236" blue="0.83529411764705885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="KI0-2F-aUW" firstAttribute="leading" secondItem="ZMp-pd-Ucq" secondAttribute="leading" constant="20" id="4XT-gf-UaE"/>
+                                    <constraint firstItem="KI0-2F-aUW" firstAttribute="top" secondItem="ZMp-pd-Ucq" secondAttribute="top" constant="20" id="G1e-K3-rIu"/>
+                                    <constraint firstAttribute="bottom" secondItem="KI0-2F-aUW" secondAttribute="bottom" constant="20" id="HmG-FF-8An"/>
+                                    <constraint firstAttribute="height" constant="240" id="ZU0-2c-2we"/>
+                                    <constraint firstAttribute="trailing" secondItem="KI0-2F-aUW" secondAttribute="trailing" constant="20" id="zTi-sl-eDx"/>
+                                </constraints>
+                            </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="WxS-Ny-1T7">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" red="0.37647058820000001" green="0.52941176469999995" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2VE-o7-hfS" customClass="LoginButton" customModule="CarCompanion" customModuleProvider="target">
+                                <rect key="frame" x="157" y="407" width="100" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="0za-aS-2Jg"/>
+                                    <constraint firstAttribute="height" constant="35" id="xGD-ZR-4kw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
+                                <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <action selector="signUp:" destination="eRr-g7-3Ia" eventType="touchUpInside" id="gRC-aG-OAG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.11372549019607843" green="0.29411764705882354" blue="0.65490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="FvB-CA-oLa" firstAttribute="top" secondItem="9sM-Ot-zro" secondAttribute="top" id="1y1-Bc-Yg5"/>
+                            <constraint firstItem="ZMp-pd-Ucq" firstAttribute="top" secondItem="FOV-HN-Tkb" secondAttribute="bottom" constant="16" id="26K-lH-H7D"/>
+                            <constraint firstItem="2VE-o7-hfS" firstAttribute="top" secondItem="ZMp-pd-Ucq" secondAttribute="bottom" constant="32" id="9V6-yu-Wsh"/>
+                            <constraint firstItem="2VE-o7-hfS" firstAttribute="centerX" secondItem="O3d-CO-3df" secondAttribute="centerX" id="BAk-7U-E2h"/>
+                            <constraint firstItem="FOV-HN-Tkb" firstAttribute="top" secondItem="9sM-Ot-zro" secondAttribute="top" constant="20" id="LYB-oi-b2b"/>
+                            <constraint firstItem="ZMp-pd-Ucq" firstAttribute="trailing" secondItem="9sM-Ot-zro" secondAttribute="trailing" id="PFg-vg-3lt"/>
+                            <constraint firstItem="ZMp-pd-Ucq" firstAttribute="leading" secondItem="9sM-Ot-zro" secondAttribute="leading" id="PeM-ap-gif"/>
+                            <constraint firstItem="FOV-HN-Tkb" firstAttribute="centerX" secondItem="O3d-CO-3df" secondAttribute="centerX" id="bsN-ob-pt8"/>
+                            <constraint firstItem="WxS-Ny-1T7" firstAttribute="centerY" secondItem="O3d-CO-3df" secondAttribute="centerY" id="g9H-SF-zXY"/>
+                            <constraint firstItem="9sM-Ot-zro" firstAttribute="trailing" secondItem="FvB-CA-oLa" secondAttribute="trailing" constant="16" id="gdE-rm-sAo"/>
+                            <constraint firstItem="WxS-Ny-1T7" firstAttribute="centerX" secondItem="O3d-CO-3df" secondAttribute="centerX" id="ovc-qR-k5V"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9sM-Ot-zro"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="WxS-Ny-1T7" id="Wi1-Ji-WmZ"/>
+                        <outlet property="emailField" destination="YS6-Cd-gdW" id="8KM-PC-Z0p"/>
+                        <outlet property="fullNameField" destination="h2N-ZT-cfO" id="n4V-wh-yyk"/>
+                        <outlet property="passwordField" destination="Ark-nF-M0r" id="hYw-Vf-haN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Cy-tp-g9a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-594.20289855072474" y="826.33928571428567"/>
+        </scene>
+        <!--LoginVC-->
+        <scene sceneID="L2k-Et-qSp">
+            <objects>
+                <viewController id="Su5-tM-f23" customClass="LoginVC" customModule="CarCompanion" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UVt-yM-da4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CRD-Kt-Kkp">
+                                <rect key="frame" x="368" y="44" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="WgZ-vf-NPf"/>
+                                    <constraint firstAttribute="width" constant="30" id="ZqN-fJ-AVX"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="Close"/>
+                                <connections>
+                                    <action selector="closeBtnPressed:" destination="Su5-tM-f23" eventType="touchUpInside" id="SxQ-vo-xA4"/>
+                                    <action selector="closeBtnPressed:" destination="eRr-g7-3Ia" eventType="touchUpInside" id="gnZ-h3-loh"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUW-yg-wFd">
+                                <rect key="frame" x="82" y="64" width="250" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="935-TM-UtZ"/>
+                                    <constraint firstAttribute="height" constant="55" id="jeN-06-VFb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="40"/>
+                                <color key="textColor" red="0.37647058820000001" green="0.52941176469999995" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qKR-dh-40d">
+                                <rect key="frame" x="0.0" y="135" width="414" height="240"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Zuv-iK-czK">
+                                        <rect key="frame" x="20" y="60" width="374" height="101"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E6C-B0-GMt" userLabel="Email Field" customClass="LoginTextField" customModule="CarCompanion" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="25.5"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uEf-W7-JZS" customClass="LoginTextField" customModule="CarCompanion" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="75.5" width="374" height="25.5"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dg4-Bv-5Fj">
+                                        <rect key="frame" x="8" y="201" width="51" height="31"/>
+                                        <color key="onTintColor" red="0.1137254902" green="0.29411764709999999" blue="0.65490196079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQ7-ag-BNF">
+                                        <rect key="frame" x="65" y="205" width="125.5" height="22"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.37647058823529411" green="0.52941176470588236" blue="0.83529411764705885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Dg4-Bv-5Fj" firstAttribute="top" secondItem="Zuv-iK-czK" secondAttribute="bottom" constant="40" id="6mt-6u-Jio"/>
+                                    <constraint firstAttribute="height" constant="240" id="B0a-7n-4JA"/>
+                                    <constraint firstItem="Dg4-Bv-5Fj" firstAttribute="leading" secondItem="qKR-dh-40d" secondAttribute="leading" constant="8" id="Cne-I0-fUp"/>
+                                    <constraint firstItem="Zuv-iK-czK" firstAttribute="leading" secondItem="qKR-dh-40d" secondAttribute="leading" constant="20" id="KAo-KN-fni"/>
+                                    <constraint firstAttribute="bottom" secondItem="jQ7-ag-BNF" secondAttribute="bottom" constant="13" id="Mej-du-i39"/>
+                                    <constraint firstItem="jQ7-ag-BNF" firstAttribute="leading" secondItem="Dg4-Bv-5Fj" secondAttribute="trailing" constant="8" id="YDf-BH-aMJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="Dg4-Bv-5Fj" secondAttribute="bottom" constant="8" id="f7u-TM-8Xg"/>
+                                    <constraint firstAttribute="trailing" secondItem="Zuv-iK-czK" secondAttribute="trailing" constant="20" id="hfu-9q-n9m"/>
+                                    <constraint firstItem="Zuv-iK-czK" firstAttribute="top" secondItem="qKR-dh-40d" secondAttribute="top" constant="60" id="hqO-zu-4Xe"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="240" id="pCL-v5-AvB"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBp-E1-tsh" customClass="LoginButton" customModule="CarCompanion" customModuleProvider="target">
+                                <rect key="frame" x="157" y="407" width="100" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="2Dc-EB-Zm4"/>
+                                    <constraint firstAttribute="width" constant="100" id="G3L-lb-F0s"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="login:" destination="Su5-tM-f23" eventType="touchUpInside" id="gcZ-ri-hNo"/>
+                                    <action selector="signUp:" destination="eRr-g7-3Ia" eventType="touchUpInside" id="As8-fE-eAL"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="oDZ-Go-Jz7">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" red="0.37647058820000001" green="0.52941176469999995" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.11372549019607843" green="0.29411764705882354" blue="0.65490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="CRD-Kt-Kkp" firstAttribute="top" secondItem="ZEi-Pw-rwR" secondAttribute="top" id="2IP-QQ-Inr"/>
+                            <constraint firstItem="iUW-yg-wFd" firstAttribute="centerX" secondItem="UVt-yM-da4" secondAttribute="centerX" id="47l-Ts-ea5"/>
+                            <constraint firstItem="oDZ-Go-Jz7" firstAttribute="centerX" secondItem="UVt-yM-da4" secondAttribute="centerX" id="Bz6-Mq-R9X"/>
+                            <constraint firstItem="iUW-yg-wFd" firstAttribute="top" secondItem="ZEi-Pw-rwR" secondAttribute="top" constant="20" id="Cg6-th-fUf"/>
+                            <constraint firstItem="qKR-dh-40d" firstAttribute="trailing" secondItem="ZEi-Pw-rwR" secondAttribute="trailing" id="DSU-Ay-UOH"/>
+                            <constraint firstItem="ZEi-Pw-rwR" firstAttribute="trailing" secondItem="CRD-Kt-Kkp" secondAttribute="trailing" constant="16" id="MGH-jQ-6xc"/>
+                            <constraint firstItem="oDZ-Go-Jz7" firstAttribute="centerY" secondItem="UVt-yM-da4" secondAttribute="centerY" id="Sbg-CC-J4w"/>
+                            <constraint firstItem="cBp-E1-tsh" firstAttribute="centerX" secondItem="UVt-yM-da4" secondAttribute="centerX" id="c7K-s0-YZl"/>
+                            <constraint firstItem="qKR-dh-40d" firstAttribute="leading" secondItem="ZEi-Pw-rwR" secondAttribute="leading" id="eNr-rO-T53"/>
+                            <constraint firstItem="qKR-dh-40d" firstAttribute="top" secondItem="iUW-yg-wFd" secondAttribute="bottom" constant="16" id="pvX-pE-LVS"/>
+                            <constraint firstItem="cBp-E1-tsh" firstAttribute="top" secondItem="qKR-dh-40d" secondAttribute="bottom" constant="32" id="zKK-AP-VHj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZEi-Pw-rwR"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="oDZ-Go-Jz7" id="8Sr-ha-mHE"/>
+                        <outlet property="emailSwitch" destination="Dg4-Bv-5Fj" id="P3Z-G5-aJ9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xgf-IJ-1Ig" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="899" y="826"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Close" width="512" height="512"/>
+    </resources>
+</document>

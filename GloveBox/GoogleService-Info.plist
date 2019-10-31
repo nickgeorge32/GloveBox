@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>662228439614-god8bbe9ddt37okj4uojst71mh5kf6sq.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.662228439614-god8bbe9ddt37okj4uojst71mh5kf6sq</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCItVApwUjPwjaV7cdw5g2YlWqJjSyRY8I</string>
+	<key>GCM_SENDER_ID</key>
+	<string>662228439614</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.simpledevstudios.GloveBox</string>
+	<key>PROJECT_ID</key>
+	<string>glovebox-e77b6</string>
+	<key>STORAGE_BUCKET</key>
+	<string>glovebox-e77b6.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:662228439614:ios:094ac232bf791c055fb76f</string>
+	<key>DATABASE_URL</key>
+	<string>https://glovebox-e77b6.firebaseio.com</string>
+</dict>
+</plist>

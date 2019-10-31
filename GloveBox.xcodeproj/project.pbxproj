@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C5A32AC7CF03505EE5D3BCA6 /* Pods_GloveBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E2D84C55109466E307DF3B /* Pods_GloveBox.framework */; };
+		E44D6293236B940E00B42073 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44D6292236B940E00B42073 /* Profile.swift */; };
 		E46E97AD236B606F0074FF13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46E97AC236B606F0074FF13 /* AppDelegate.swift */; };
 		E46E97AF236B606F0074FF13 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46E97AE236B606F0074FF13 /* SceneDelegate.swift */; };
 		E46E97B1236B606F0074FF13 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46E97B0236B606F0074FF13 /* FirstViewController.swift */; };
@@ -14,10 +16,24 @@
 		E46E97B6236B606F0074FF13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E46E97B4236B606F0074FF13 /* Main.storyboard */; };
 		E46E97B8236B60710074FF13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E46E97B7236B60710074FF13 /* Assets.xcassets */; };
 		E46E97BB236B60710074FF13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E46E97B9236B60710074FF13 /* LaunchScreen.storyboard */; };
+		E46E97D0236B61FD0074FF13 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E46E97CF236B61FD0074FF13 /* Login.storyboard */; };
+		E46E97D2236B62410074FF13 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46E97D1236B62410074FF13 /* WelcomeVC.swift */; };
+		E46E97D4236B68FF0074FF13 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E46E97D3236B68FE0074FF13 /* GoogleService-Info.plist */; };
+		E46E97D6236B6A9E0074FF13 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46E97D5236B6A9E0074FF13 /* SignUpVC.swift */; };
+		E46E97D8236B6AAB0074FF13 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46E97D7236B6AAB0074FF13 /* LoginVC.swift */; };
+		E46E97DA236B6AF60074FF13 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46E97D9236B6AF60074FF13 /* Constants.swift */; };
+		E46E97DC236B6E100074FF13 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46E97DB236B6E100074FF13 /* Helper.swift */; };
+		E46E97DE236B6E200074FF13 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46E97DD236B6E1F0074FF13 /* DataService.swift */; };
+		E46E97E0236B70CF0074FF13 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46E97DF236B70CF0074FF13 /* LoginButton.swift */; };
+		E46E97E2236B71030074FF13 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46E97E1236B71030074FF13 /* LoginTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E46E97A9236B606F0074FF13 /* GloveBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GloveBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		06141EF594E13A3776B48619 /* Pods-GloveBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GloveBox.debug.xcconfig"; path = "Target Support Files/Pods-GloveBox/Pods-GloveBox.debug.xcconfig"; sourceTree = "<group>"; };
+		541665E0FED69F4734284D78 /* Pods-GloveBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GloveBox.release.xcconfig"; path = "Target Support Files/Pods-GloveBox/Pods-GloveBox.release.xcconfig"; sourceTree = "<group>"; };
+		E2E2D84C55109466E307DF3B /* Pods_GloveBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GloveBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E44D6292236B940E00B42073 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		E46E97A9236B606F0074FF13 /* CarCompanion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarCompanion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E46E97AC236B606F0074FF13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E46E97AE236B606F0074FF13 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E46E97B0236B606F0074FF13 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -26,6 +42,16 @@
 		E46E97B7236B60710074FF13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E46E97BA236B60710074FF13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E46E97BC236B60710074FF13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E46E97CF236B61FD0074FF13 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		E46E97D1236B62410074FF13 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
+		E46E97D3236B68FE0074FF13 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E46E97D5236B6A9E0074FF13 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		E46E97D7236B6AAB0074FF13 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		E46E97D9236B6AF60074FF13 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E46E97DB236B6E100074FF13 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		E46E97DD236B6E1F0074FF13 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		E46E97DF236B70CF0074FF13 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
+		E46E97E1236B71030074FF13 /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,24 +59,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5A32AC7CF03505EE5D3BCA6 /* Pods_GloveBox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0AF8562CF52BF4909ED11452 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				06141EF594E13A3776B48619 /* Pods-GloveBox.debug.xcconfig */,
+				541665E0FED69F4734284D78 /* Pods-GloveBox.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E46E97A0236B606F0074FF13 = {
 			isa = PBXGroup;
 			children = (
 				E46E97AB236B606F0074FF13 /* GloveBox */,
 				E46E97AA236B606F0074FF13 /* Products */,
+				0AF8562CF52BF4909ED11452 /* Pods */,
+				F066C510586839A6C47D2992 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		E46E97AA236B606F0074FF13 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E46E97A9236B606F0074FF13 /* GloveBox.app */,
+				E46E97A9236B606F0074FF13 /* CarCompanion.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -60,14 +98,121 @@
 			children = (
 				E46E97AC236B606F0074FF13 /* AppDelegate.swift */,
 				E46E97AE236B606F0074FF13 /* SceneDelegate.swift */,
-				E46E97B0236B606F0074FF13 /* FirstViewController.swift */,
-				E46E97B2236B606F0074FF13 /* SecondViewController.swift */,
-				E46E97B4236B606F0074FF13 /* Main.storyboard */,
+				E46E97CB236B61570074FF13 /* Storyboard */,
+				E46E97CA236B61510074FF13 /* Model */,
+				E46E97C9236B61420074FF13 /* View */,
+				E46E97C8236B61350074FF13 /* Controller */,
+				E46E97C7236B612F0074FF13 /* Extensions */,
+				E46E97C6236B61270074FF13 /* Services */,
+				E46E97C5236B61200074FF13 /* Utilities */,
+				E46E97C4236B60F50074FF13 /* Enums */,
 				E46E97B7236B60710074FF13 /* Assets.xcassets */,
-				E46E97B9236B60710074FF13 /* LaunchScreen.storyboard */,
 				E46E97BC236B60710074FF13 /* Info.plist */,
+				E46E97D3236B68FE0074FF13 /* GoogleService-Info.plist */,
 			);
 			path = GloveBox;
+			sourceTree = "<group>";
+		};
+		E46E97C4236B60F50074FF13 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		E46E97C5236B61200074FF13 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				E46E97D9236B6AF60074FF13 /* Constants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		E46E97C6236B61270074FF13 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E46E97DB236B6E100074FF13 /* Helper.swift */,
+				E46E97DD236B6E1F0074FF13 /* DataService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E46E97C7236B612F0074FF13 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E46E97C8236B61350074FF13 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E46E97CC236B61AD0074FF13 /* Login */,
+				E46E97CE236B61BE0074FF13 /* Main */,
+				E46E97CD236B61B50074FF13 /* Settings */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E46E97C9236B61420074FF13 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E46E97DF236B70CF0074FF13 /* LoginButton.swift */,
+				E46E97E1236B71030074FF13 /* LoginTextField.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E46E97CA236B61510074FF13 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E44D6292236B940E00B42073 /* Profile.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E46E97CB236B61570074FF13 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				E46E97B9236B60710074FF13 /* LaunchScreen.storyboard */,
+				E46E97CF236B61FD0074FF13 /* Login.storyboard */,
+				E46E97B4236B606F0074FF13 /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		E46E97CC236B61AD0074FF13 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				E46E97D1236B62410074FF13 /* WelcomeVC.swift */,
+				E46E97D5236B6A9E0074FF13 /* SignUpVC.swift */,
+				E46E97D7236B6AAB0074FF13 /* LoginVC.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		E46E97CD236B61B50074FF13 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		E46E97CE236B61BE0074FF13 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				E46E97B0236B606F0074FF13 /* FirstViewController.swift */,
+				E46E97B2236B606F0074FF13 /* SecondViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		F066C510586839A6C47D2992 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E2E2D84C55109466E307DF3B /* Pods_GloveBox.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +222,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E46E97BF236B60710074FF13 /* Build configuration list for PBXNativeTarget "GloveBox" */;
 			buildPhases = (
+				A4193273CAF35122D0CAE893 /* [CP] Check Pods Manifest.lock */,
 				E46E97A5236B606F0074FF13 /* Sources */,
 				E46E97A6236B606F0074FF13 /* Frameworks */,
 				E46E97A7236B606F0074FF13 /* Resources */,
+				E46E97C2236B60970074FF13 /* Increment Build */,
+				E46E97C3236B60DE0074FF13 /* Fabric */,
+				6878B848F030FE5B4E5963E4 /* [CP] Embed Pods Frameworks */,
+				62B2613F5520DD4A29EC21C1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -87,7 +237,7 @@
 			);
 			name = GloveBox;
 			productName = GloveBox;
-			productReference = E46E97A9236B606F0074FF13 /* GloveBox.app */;
+			productReference = E46E97A9236B606F0074FF13 /* CarCompanion.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -128,7 +278,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E46E97D0236B61FD0074FF13 /* Login.storyboard in Resources */,
 				E46E97BB236B60710074FF13 /* LaunchScreen.storyboard in Resources */,
+				E46E97D4236B68FF0074FF13 /* GoogleService-Info.plist in Resources */,
 				E46E97B8236B60710074FF13 /* Assets.xcassets in Resources */,
 				E46E97B6236B606F0074FF13 /* Main.storyboard in Resources */,
 			);
@@ -136,15 +288,119 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		62B2613F5520DD4A29EC21C1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GloveBox/Pods-GloveBox-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GloveBox/Pods-GloveBox-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GloveBox/Pods-GloveBox-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6878B848F030FE5B4E5963E4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GloveBox/Pods-GloveBox-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GloveBox/Pods-GloveBox-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GloveBox/Pods-GloveBox-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4193273CAF35122D0CAE893 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GloveBox-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E46E97C2236B60970074FF13 /* Increment Build */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Increment Build";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n";
+		};
+		E46E97C3236B60DE0074FF13 /* Fabric */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Fabric;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E46E97A5236B606F0074FF13 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E46E97E0236B70CF0074FF13 /* LoginButton.swift in Sources */,
 				E46E97B3236B606F0074FF13 /* SecondViewController.swift in Sources */,
+				E46E97D2236B62410074FF13 /* WelcomeVC.swift in Sources */,
+				E44D6293236B940E00B42073 /* Profile.swift in Sources */,
+				E46E97D8236B6AAB0074FF13 /* LoginVC.swift in Sources */,
 				E46E97B1236B606F0074FF13 /* FirstViewController.swift in Sources */,
 				E46E97AD236B606F0074FF13 /* AppDelegate.swift in Sources */,
+				E46E97DC236B6E100074FF13 /* Helper.swift in Sources */,
+				E46E97D6236B6A9E0074FF13 /* SignUpVC.swift in Sources */,
 				E46E97AF236B606F0074FF13 /* SceneDelegate.swift in Sources */,
+				E46E97E2236B71030074FF13 /* LoginTextField.swift in Sources */,
+				E46E97DA236B6AF60074FF13 /* Constants.swift in Sources */,
+				E46E97DE236B6E200074FF13 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +542,7 @@
 		};
 		E46E97C0236B60710074FF13 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06141EF594E13A3776B48619 /* Pods-GloveBox.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -296,7 +553,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.simpledevstudios.GloveBox;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CarCompanion;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -304,6 +561,7 @@
 		};
 		E46E97C1236B60710074FF13 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 541665E0FED69F4734284D78 /* Pods-GloveBox.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -314,7 +572,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.simpledevstudios.GloveBox;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CarCompanion;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
