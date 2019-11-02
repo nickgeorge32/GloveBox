@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--WelcomeVC-->
         <scene sceneID="Odw-So-VrD">
             <objects>
-                <viewController id="BsR-Ob-Qy1" sceneMemberID="viewController">
+                <viewController id="BsR-Ob-Qy1" customClass="WelcomeVC" customModule="CarCompanion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vN0-xE-rsm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -54,6 +54,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sK6-5q-MSr"/>
                     </view>
+                    <connections>
+                        <segue destination="o2Q-NO-bi6" kind="presentation" identifier="welcomeToMain" modalPresentationStyle="fullScreen" id="cZD-UC-uWG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r02-QK-GRW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -162,11 +165,20 @@
                         <outlet property="emailField" destination="YS6-Cd-gdW" id="8KM-PC-Z0p"/>
                         <outlet property="fullNameField" destination="h2N-ZT-cfO" id="n4V-wh-yyk"/>
                         <outlet property="passwordField" destination="Ark-nF-M0r" id="hYw-Vf-haN"/>
+                        <segue destination="o2Q-NO-bi6" kind="presentation" identifier="signUpToMain" modalPresentationStyle="fullScreen" id="1Tb-yh-oih"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Cy-tp-g9a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-594.20289855072474" y="826.33928571428567"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="fow-Qc-hIE">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="o2Q-NO-bi6" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xey-xd-Xwe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="134" y="1149"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="L2k-Et-qSp">
@@ -184,8 +196,7 @@
                                 </constraints>
                                 <state key="normal" title="Button" image="Close"/>
                                 <connections>
-                                    <action selector="closeBtnPressed:" destination="Su5-tM-f23" eventType="touchUpInside" id="SxQ-vo-xA4"/>
-                                    <action selector="closeBtnPressed:" destination="eRr-g7-3Ia" eventType="touchUpInside" id="gnZ-h3-loh"/>
+                                    <action selector="closeBtnPressed:" destination="Su5-tM-f23" eventType="touchUpInside" id="w0Z-d5-4CP"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUW-yg-wFd">
@@ -252,8 +263,7 @@
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
-                                    <action selector="login:" destination="Su5-tM-f23" eventType="touchUpInside" id="gcZ-ri-hNo"/>
-                                    <action selector="signUp:" destination="eRr-g7-3Ia" eventType="touchUpInside" id="As8-fE-eAL"/>
+                                    <action selector="login:" destination="Su5-tM-f23" eventType="touchUpInside" id="ahs-Cr-fQj"/>
                                 </connections>
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="oDZ-Go-Jz7">
@@ -278,8 +288,11 @@
                         <viewLayoutGuide key="safeArea" id="ZEi-Pw-rwR"/>
                     </view>
                     <connections>
-                        <outlet property="activityIndicator" destination="oDZ-Go-Jz7" id="8Sr-ha-mHE"/>
-                        <outlet property="emailSwitch" destination="Dg4-Bv-5Fj" id="P3Z-G5-aJ9"/>
+                        <outlet property="activityIndicator" destination="oDZ-Go-Jz7" id="wYr-VW-eFk"/>
+                        <outlet property="emailField" destination="E6C-B0-GMt" id="Xk5-xE-xJb"/>
+                        <outlet property="emailSwitch" destination="Dg4-Bv-5Fj" id="pfz-ey-plD"/>
+                        <outlet property="passwordField" destination="uEf-W7-JZS" id="6Rh-JU-fiX"/>
+                        <segue destination="o2Q-NO-bi6" kind="presentation" identifier="loginToMain" modalPresentationStyle="fullScreen" id="vKY-QX-KiY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xgf-IJ-1Ig" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -290,4 +303,7 @@
     <resources>
         <image name="Close" width="512" height="512"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="vKY-QX-KiY"/>
+    </inferredMetricsTieBreakers>
 </document>

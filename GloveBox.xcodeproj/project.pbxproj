@@ -26,6 +26,7 @@
 		E46E97DE236B6E200074FF13 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46E97DD236B6E1F0074FF13 /* DataService.swift */; };
 		E46E97E0236B70CF0074FF13 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46E97DF236B70CF0074FF13 /* LoginButton.swift */; };
 		E46E97E2236B71030074FF13 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46E97E1236B71030074FF13 /* LoginTextField.swift */; };
+		E489E1BB236D6EF900298FF0 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E489E1BA236D6EF900298FF0 /* SettingsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		E46E97DD236B6E1F0074FF13 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		E46E97DF236B70CF0074FF13 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
 		E46E97E1236B71030074FF13 /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
+		E489E1BA236D6EF900298FF0 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 		E46E97CD236B61B50074FF13 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				E489E1BA236D6EF900298FF0 /* SettingsVC.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				E46E97E2236B71030074FF13 /* LoginTextField.swift in Sources */,
 				E46E97DA236B6AF60074FF13 /* Constants.swift in Sources */,
 				E46E97DE236B6E200074FF13 /* DataService.swift in Sources */,
+				E489E1BB236D6EF900298FF0 /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,6 +556,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.simpledevstudios.GloveBox;
 				PRODUCT_NAME = CarCompanion;
 				SWIFT_VERSION = 5.0;
@@ -571,6 +576,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.simpledevstudios.GloveBox;
 				PRODUCT_NAME = CarCompanion;
 				SWIFT_VERSION = 5.0;
