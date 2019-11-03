@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  SecondViewController.swift
 //  GloveBox
 //
 //  Created by Nick George on 10/31/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class DriveVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -4,74 +4,137 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--First-->
+        <!--HomeVC-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="CarCompanion" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="HomeVC" customModule="CarCompanion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="First View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
-                                <rect key="frame" x="131.5" y="426.5" width="151" height="43"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vVz-me-CC1">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overview" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EcW-B6-eIw">
+                                        <rect key="frame" x="126.5" y="44" width="161" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="rhK-6H-lPT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="36"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0078431372550000003" green="0.16078431369999999" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="EcW-B6-eIw" secondAttribute="bottom" constant="0.80000000000000004" id="Ipl-v2-MYi"/>
+                                    <constraint firstAttribute="height" constant="100" id="JSz-YZ-Ca0"/>
+                                    <constraint firstItem="EcW-B6-eIw" firstAttribute="centerX" secondItem="vVz-me-CC1" secondAttribute="centerX" id="vAV-3C-MOm"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Gza-JH-VAU">
+                                <rect key="frame" x="0.0" y="100" width="414" height="713"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by FirstViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L">
-                                <rect key="frame" x="110" y="477.5" width="194.5" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KJD-Fz-77Q">
+                                    <size key="itemSize" width="394" height="150"/>
+                                    <size key="estimatedItemSize" width="394" height="150"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="homeCell" id="kWd-xH-XwB" customClass="MainCVC" customModule="CarCompanion" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="0.0" width="394" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="iyQ-er-s6s">
+                                            <rect key="frame" x="0.0" y="0.0" width="394" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mob-S2-5fj">
+                                                    <rect key="frame" x="172" y="62.5" width="50" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="gvZ-wV-fIx"/>
+                                                        <constraint firstAttribute="width" constant="50" id="iOB-NB-9Pg"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Mob-S2-5fj" firstAttribute="centerX" secondItem="iyQ-er-s6s" secondAttribute="centerX" id="go2-Y2-917"/>
+                                                <constraint firstItem="Mob-S2-5fj" firstAttribute="centerY" secondItem="iyQ-er-s6s" secondAttribute="centerY" id="qvf-SQ-yEE"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <size key="customSize" width="394" height="150"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.37647058820000001" green="0.52941176469999995" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" symbolic="YES" id="cfb-er-3JN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="e1l-AV-tCB"/>
-                            <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
+                            <constraint firstItem="Gza-JH-VAU" firstAttribute="top" secondItem="vVz-me-CC1" secondAttribute="bottom" id="ANV-Ve-hj6"/>
+                            <constraint firstItem="vVz-me-CC1" firstAttribute="trailing" secondItem="PQr-Ze-W5v" secondAttribute="trailing" id="YUC-Yo-W9g"/>
+                            <constraint firstItem="Gza-JH-VAU" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="dyc-ve-775"/>
+                            <constraint firstItem="vVz-me-CC1" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="gtB-uB-3l4"/>
+                            <constraint firstItem="Gza-JH-VAU" firstAttribute="trailing" secondItem="PQr-Ze-W5v" secondAttribute="trailing" id="qA9-Av-FlW"/>
+                            <constraint firstItem="vVz-me-CC1" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="ub0-EX-bYS"/>
+                            <constraint firstItem="Gza-JH-VAU" firstAttribute="bottom" secondItem="PQr-Ze-W5v" secondAttribute="bottom" id="z0t-0O-E4i"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="house.fill" catalog="system" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="" image="house.fill" catalog="system" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="homeCollectionView" destination="Gza-JH-VAU" id="meG-xM-jVY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="-320"/>
+            <point key="canvasLocation" x="749.27536231884062" y="-320.08928571428572"/>
         </scene>
-        <!--Second-->
+        <!--DriveVC-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="CarCompanion" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" customClass="DriveVC" customModule="CarCompanion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="106" y="426.5" width="202" height="43"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="99.5" y="477.5" width="215" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tcB-PW-KGf">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drive Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ek-LE-OsP">
+                                        <rect key="frame" x="118.5" y="44" width="177.5" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="gap-ab-sxf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="36"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0078431372550000003" green="0.16078431369999999" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="7Ek-LE-OsP" firstAttribute="centerX" secondItem="tcB-PW-KGf" secondAttribute="centerX" id="F1Z-X5-MQ3"/>
+                                    <constraint firstAttribute="bottom" secondItem="7Ek-LE-OsP" secondAttribute="bottom" constant="0.80000000000000004" id="JE1-PK-P4V"/>
+                                    <constraint firstAttribute="height" constant="100" id="pAc-Bk-Bce"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
-                            <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
-                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
+                            <constraint firstItem="tcB-PW-KGf" firstAttribute="trailing" secondItem="O1u-W8-tvY" secondAttribute="trailing" id="b95-cF-TBw"/>
+                            <constraint firstItem="tcB-PW-KGf" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="top" id="fUF-Kl-lZj"/>
+                            <constraint firstItem="tcB-PW-KGf" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="i0T-MB-uDw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="car.fill" catalog="system" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="" image="car.fill" catalog="system" id="cPa-gy-q4n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -142,21 +205,63 @@
             </objects>
             <point key="canvasLocation" x="747.82608695652175" y="1759.8214285714284"/>
         </scene>
-        <!--Item-->
+        <!--MaintenanceVC-->
         <scene sceneID="V4W-5V-tIb">
             <objects>
-                <viewController id="fbx-hI-1pf" sceneMemberID="viewController">
+                <viewController id="fbx-hI-1pf" customClass="MaintenanceVC" customModule="CarCompanion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fgU-Tb-4Fq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FUQ-SR-VjF">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maintenance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYy-aY-dNx">
+                                        <rect key="frame" x="99" y="44" width="216.5" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="lLK-hN-a9Z"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="36"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0078431372550000003" green="0.16078431369999999" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="3ac-Qx-Scs"/>
+                                    <constraint firstAttribute="bottom" secondItem="uYy-aY-dNx" secondAttribute="bottom" constant="0.80000000000000004" id="kSk-6u-LHG"/>
+                                    <constraint firstItem="uYy-aY-dNx" firstAttribute="centerX" secondItem="FUQ-SR-VjF" secondAttribute="centerX" id="zim-Jx-bJZ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="FUQ-SR-VjF" firstAttribute="top" secondItem="fgU-Tb-4Fq" secondAttribute="top" id="9mU-R9-sQW"/>
+                            <constraint firstItem="FUQ-SR-VjF" firstAttribute="leading" secondItem="OnB-fC-nFh" secondAttribute="leading" id="pnS-by-Ao9"/>
+                            <constraint firstAttribute="trailing" secondItem="FUQ-SR-VjF" secondAttribute="trailing" id="qYF-NA-Hr5"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="OnB-fC-nFh"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="wrench.fill" catalog="system" id="5lx-4J-W6g"/>
+                    <tabBarItem key="tabBarItem" title="" image="wrench.fill" catalog="system" id="5lx-4J-W6g"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mGV-XJ-2ZX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="749" y="1055"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="mgL-mV-vNw">
+            <objects>
+                <viewController id="J4F-lb-dlV" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="keK-aj-EfB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="p79-tJ-ura"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tK3-YA-LSC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2064" y="321"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
