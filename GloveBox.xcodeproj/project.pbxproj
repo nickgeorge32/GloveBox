@@ -564,7 +564,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.1;
+				MARKETING_VERSION = 0.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.simpledevstudios.GloveBox;
 				PRODUCT_NAME = CarCompanion;
 				SWIFT_VERSION = 5.0;
@@ -584,7 +584,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.1;
+				MARKETING_VERSION = 0.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.simpledevstudios.GloveBox;
 				PRODUCT_NAME = CarCompanion;
 				SWIFT_VERSION = 5.0;
