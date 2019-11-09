@@ -9,22 +9,44 @@
 import UIKit
 
 class MaintenanceVC: UIViewController {
-
+    //MARK: OUTLETS
+    @IBOutlet weak var maintenanceTableView: UITableView!
+    
+    //MARK: VARIABLES
+    var maintenance = [String]()
+    
+    //MARK: LIFECYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        maintenanceTableView.delegate = self
+        maintenanceTableView.dataSource = self
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    //MARK: ACTIONS
+    @IBAction func addMaintenance(_ sender: Any) {
+        maintenance.append("New Maint")
+        maintenanceTableView.reloadData()
     }
-    */
+}
 
+extension MaintenanceVC: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if maintenance.count == 0 {
+            self.maintenanceTableView.setEmptyMessage("You have not logged any maintenance yet, log a maintenance event to see it here!")
+        } else {
+            self.maintenanceTableView.restore()
+        }
+
+        return maintenance.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = maintenanceTableView.dequeueReusableCell(withIdentifier: "maintenanceCell", for: indexPath)
+        cell.textLabel?.text = "Maintenance"
+        
+        return cell
+    }
+    
+    
 }

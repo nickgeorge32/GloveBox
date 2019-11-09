@@ -36,8 +36,8 @@
                                     <constraint firstItem="EcW-B6-eIw" firstAttribute="centerX" secondItem="vVz-me-CC1" secondAttribute="centerX" id="vAV-3C-MOm"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Gza-JH-VAU">
-                                <rect key="frame" x="0.0" y="100" width="414" height="713"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Gza-JH-VAU">
+                                <rect key="frame" x="13" y="108" width="414" height="713"/>
                                 <color key="backgroundColor" white="0.80057612728310501" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KJD-Fz-77Q">
                                     <size key="itemSize" width="400" height="150"/>
@@ -117,28 +117,63 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FE5-hS-wRe">
+                                        <rect key="frame" x="376" y="56.5" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="FG2-DS-ZHU"/>
+                                            <constraint firstAttribute="width" constant="30" id="Rc2-A8-iiG"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="plus" catalog="system"/>
+                                        <connections>
+                                            <action selector="addDrive:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="NLG-ja-SPE"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0078431372550000003" green="0.16078431369999999" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="7Ek-LE-OsP" firstAttribute="centerX" secondItem="tcB-PW-KGf" secondAttribute="centerX" id="F1Z-X5-MQ3"/>
                                     <constraint firstAttribute="bottom" secondItem="7Ek-LE-OsP" secondAttribute="bottom" constant="0.80000000000000004" id="JE1-PK-P4V"/>
+                                    <constraint firstAttribute="trailing" secondItem="FE5-hS-wRe" secondAttribute="trailing" constant="8" id="JHH-a7-QKX"/>
+                                    <constraint firstItem="FE5-hS-wRe" firstAttribute="centerY" secondItem="7Ek-LE-OsP" secondAttribute="centerY" id="LRo-ng-D6r"/>
                                     <constraint firstAttribute="height" constant="100" id="pAc-Bk-Bce"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="edy-D9-I9R">
+                                <rect key="frame" x="0.0" y="100" width="414" height="713"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="driveCell" focusStyle="custom" id="Ii1-qh-5lO" customClass="DriveDataCell" customModule="CarCompanion" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ii1-qh-5lO" id="yFJ-zT-VOa">
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="edy-D9-I9R" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="8eQ-TP-u8X"/>
                             <constraint firstItem="tcB-PW-KGf" firstAttribute="trailing" secondItem="O1u-W8-tvY" secondAttribute="trailing" id="b95-cF-TBw"/>
+                            <constraint firstItem="edy-D9-I9R" firstAttribute="bottom" secondItem="O1u-W8-tvY" secondAttribute="bottom" id="cDB-9i-AAb"/>
+                            <constraint firstItem="edy-D9-I9R" firstAttribute="trailing" secondItem="O1u-W8-tvY" secondAttribute="trailing" id="dGZ-25-8X3"/>
                             <constraint firstItem="tcB-PW-KGf" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="top" id="fUF-Kl-lZj"/>
                             <constraint firstItem="tcB-PW-KGf" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="i0T-MB-uDw"/>
+                            <constraint firstItem="edy-D9-I9R" firstAttribute="top" secondItem="tcB-PW-KGf" secondAttribute="bottom" id="r2E-x3-a51"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="car.fill" catalog="system" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="driveTableView" destination="edy-D9-I9R" id="7wq-4K-piA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="360"/>
+            <point key="canvasLocation" x="749.27536231884062" y="359.59821428571428"/>
         </scene>
         <!--SettingsVC-->
         <scene sceneID="sAI-0Q-Krk">
@@ -225,43 +260,63 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X1d-75-7Ur">
+                                        <rect key="frame" x="376" y="56.5" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="ubv-wu-0iy"/>
+                                            <constraint firstAttribute="height" constant="30" id="x3J-Ou-ys5"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="plus" catalog="system"/>
+                                        <connections>
+                                            <action selector="addMaintenance:" destination="fbx-hI-1pf" eventType="touchUpInside" id="G1E-ny-X9p"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0078431372550000003" green="0.16078431369999999" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="3ac-Qx-Scs"/>
+                                    <constraint firstAttribute="trailing" secondItem="X1d-75-7Ur" secondAttribute="trailing" constant="8" id="Ef9-8w-Ufn"/>
+                                    <constraint firstItem="X1d-75-7Ur" firstAttribute="centerY" secondItem="uYy-aY-dNx" secondAttribute="centerY" id="Oiu-iF-eqQ"/>
                                     <constraint firstAttribute="bottom" secondItem="uYy-aY-dNx" secondAttribute="bottom" constant="0.80000000000000004" id="kSk-6u-LHG"/>
                                     <constraint firstItem="uYy-aY-dNx" firstAttribute="centerX" secondItem="FUQ-SR-VjF" secondAttribute="centerX" id="zim-Jx-bJZ"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nyU-DR-a5S">
+                                <rect key="frame" x="0.0" y="100" width="414" height="713"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="maintenanceCell" id="iMG-id-k82" customClass="MaintenanceCell" customModule="CarCompanion" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iMG-id-k82" id="E2X-t8-8ri">
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="nyU-DR-a5S" firstAttribute="trailing" secondItem="OnB-fC-nFh" secondAttribute="trailing" id="7w7-NJ-sK3"/>
+                            <constraint firstItem="nyU-DR-a5S" firstAttribute="leading" secondItem="OnB-fC-nFh" secondAttribute="leading" id="98m-5l-ye8"/>
                             <constraint firstItem="FUQ-SR-VjF" firstAttribute="top" secondItem="fgU-Tb-4Fq" secondAttribute="top" id="9mU-R9-sQW"/>
+                            <constraint firstItem="nyU-DR-a5S" firstAttribute="top" secondItem="FUQ-SR-VjF" secondAttribute="bottom" id="HTb-li-kZA"/>
+                            <constraint firstItem="nyU-DR-a5S" firstAttribute="bottom" secondItem="OnB-fC-nFh" secondAttribute="bottom" id="Rwi-gk-Ipt"/>
                             <constraint firstItem="FUQ-SR-VjF" firstAttribute="leading" secondItem="OnB-fC-nFh" secondAttribute="leading" id="pnS-by-Ao9"/>
                             <constraint firstAttribute="trailing" secondItem="FUQ-SR-VjF" secondAttribute="trailing" id="qYF-NA-Hr5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OnB-fC-nFh"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="wrench.fill" catalog="system" id="5lx-4J-W6g"/>
+                    <connections>
+                        <outlet property="maintenanceTableView" destination="nyU-DR-a5S" id="vd5-sZ-PI0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mGV-XJ-2ZX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749" y="1055"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="mgL-mV-vNw">
-            <objects>
-                <viewController id="J4F-lb-dlV" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="keK-aj-EfB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="p79-tJ-ura"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tK3-YA-LSC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2064" y="321"/>
+            <point key="canvasLocation" x="747.82608695652175" y="1054.6875"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -272,6 +327,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" red="0.0078431372549019607" green="0.16078431372549018" blue="0.46274509803921571" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
@@ -297,6 +353,7 @@
         <image name="car.fill" catalog="system" width="64" height="46"/>
         <image name="house.fill" catalog="system" width="64" height="52"/>
         <image name="line.horizontal.3" catalog="system" width="64" height="32"/>
+        <image name="plus" catalog="system" width="64" height="56"/>
         <image name="wrench.fill" catalog="system" width="64" height="60"/>
     </resources>
 </document>

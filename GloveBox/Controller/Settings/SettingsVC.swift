@@ -20,7 +20,6 @@ class SettingsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.backgroundColor = Constants.Colors.light1
         tableView.delegate = self
         tableView.dataSource = self
     }

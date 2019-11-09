@@ -28,6 +28,9 @@
 		E46E97E2236B71030074FF13 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46E97E1236B71030074FF13 /* LoginTextField.swift */; };
 		E4724F10236E2DC100C70D26 /* MaintenanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4724F0F236E2DC100C70D26 /* MaintenanceVC.swift */; };
 		E489E1BB236D6EF900298FF0 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E489E1BA236D6EF900298FF0 /* SettingsVC.swift */; };
+		E4D30A162376B73B00B32F21 /* DriveDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D30A152376B73B00B32F21 /* DriveDataCell.swift */; };
+		E4D30A182376B7D600B32F21 /* MaintenanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D30A172376B7D600B32F21 /* MaintenanceCell.swift */; };
+		E4D30A1C2376CB3F00B32F21 /* TableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D30A1B2376CB3F00B32F21 /* TableViewExtensions.swift */; };
 		E4D5C92F236F57F400B6B971 /* MainCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D5C92E236F57F400B6B971 /* MainCVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +60,9 @@
 		E46E97E1236B71030074FF13 /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 		E4724F0F236E2DC100C70D26 /* MaintenanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaintenanceVC.swift; sourceTree = "<group>"; };
 		E489E1BA236D6EF900298FF0 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		E4D30A152376B73B00B32F21 /* DriveDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveDataCell.swift; sourceTree = "<group>"; };
+		E4D30A172376B7D600B32F21 /* MaintenanceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaintenanceCell.swift; sourceTree = "<group>"; };
+		E4D30A1B2376CB3F00B32F21 /* TableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewExtensions.swift; sourceTree = "<group>"; };
 		E4D5C92E236F57F400B6B971 /* MainCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,6 +152,7 @@
 		E46E97C7236B612F0074FF13 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E4D30A1B2376CB3F00B32F21 /* TableViewExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -166,6 +173,8 @@
 				E46E97DF236B70CF0074FF13 /* LoginButton.swift */,
 				E46E97E1236B71030074FF13 /* LoginTextField.swift */,
 				E4D5C92E236F57F400B6B971 /* MainCVC.swift */,
+				E4D30A152376B73B00B32F21 /* DriveDataCell.swift */,
+				E4D30A172376B7D600B32F21 /* MaintenanceCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -397,6 +406,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4D30A1C2376CB3F00B32F21 /* TableViewExtensions.swift in Sources */,
 				E46E97E0236B70CF0074FF13 /* LoginButton.swift in Sources */,
 				E46E97B3236B606F0074FF13 /* DriveVC.swift in Sources */,
 				E46E97D2236B62410074FF13 /* WelcomeVC.swift in Sources */,
@@ -408,7 +418,9 @@
 				E46E97D6236B6A9E0074FF13 /* SignUpVC.swift in Sources */,
 				E4D5C92F236F57F400B6B971 /* MainCVC.swift in Sources */,
 				E4724F10236E2DC100C70D26 /* MaintenanceVC.swift in Sources */,
+				E4D30A162376B73B00B32F21 /* DriveDataCell.swift in Sources */,
 				E46E97AF236B606F0074FF13 /* SceneDelegate.swift in Sources */,
+				E4D30A182376B7D600B32F21 /* MaintenanceCell.swift in Sources */,
 				E46E97E2236B71030074FF13 /* LoginTextField.swift in Sources */,
 				E46E97DA236B6AF60074FF13 /* Constants.swift in Sources */,
 				E46E97DE236B6E200074FF13 /* DataService.swift in Sources */,
@@ -560,6 +572,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2XPA6ZBE84;
 				INFOPLIST_FILE = GloveBox/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -580,6 +593,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2XPA6ZBE84;
 				INFOPLIST_FILE = GloveBox/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
