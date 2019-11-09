@@ -36,8 +36,8 @@
                                     <constraint firstItem="EcW-B6-eIw" firstAttribute="centerX" secondItem="vVz-me-CC1" secondAttribute="centerX" id="vAV-3C-MOm"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Gza-JH-VAU">
-                                <rect key="frame" x="13" y="108" width="414" height="713"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Gza-JH-VAU">
+                                <rect key="frame" x="0.0" y="100" width="414" height="713"/>
                                 <color key="backgroundColor" white="0.80057612728310501" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KJD-Fz-77Q">
                                     <size key="itemSize" width="400" height="150"/>
@@ -238,7 +238,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q6d-RH-thn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="747.82608695652175" y="1759.8214285714284"/>
+            <point key="canvasLocation" x="749" y="1822"/>
         </scene>
         <!--MaintenanceVC-->
         <scene sceneID="V4W-5V-tIb">
@@ -346,7 +346,7 @@
                 <viewControllerPlaceholder storyboardName="Login" id="LYe-5l-fGn" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sdc-Rv-Ptp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="96" y="1760"/>
+            <point key="canvasLocation" x="62" y="1822"/>
         </scene>
     </scenes>
     <resources>

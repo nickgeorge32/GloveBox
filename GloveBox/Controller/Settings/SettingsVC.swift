@@ -14,7 +14,7 @@ class SettingsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     
     //MARK: VARIABLES
-    var options = ["Logout"]
+    var options = ["Account","Vehicles","Logout"]
     
     //MARK: LIFECYCLE
     override func viewDidLoad() {
@@ -63,6 +63,16 @@ class SettingsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 alert.addAction(logout)
                 alert.addAction(cancel)
                 present(alert, animated: true, completion: nil)
+            } else if cell?.textLabel?.text == "Account" {
+                let storyboard = UIStoryboard.init(name: "Settings", bundle: nil)
+                let accountVC = storyboard.instantiateViewController(identifier: "AccountVC")
+                accountVC.modalPresentationStyle = .fullScreen
+                presentDetail(accountVC)
+            } else if cell?.textLabel?.text == "Vehicles" {
+                let storyboard = UIStoryboard.init(name: "Settings", bundle: nil)
+                let vehiclesVC = storyboard.instantiateViewController(identifier: "VehiclesVC")
+                vehiclesVC.modalPresentationStyle = .fullScreen
+                presentDetail(vehiclesVC)
             }
         }
     }
