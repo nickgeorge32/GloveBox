@@ -8,7 +8,12 @@
 
 import UIKit
 
+@IBDesignable
 class MainCVC: UICollectionViewCell {
-
+    @IBOutlet weak var cellLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
     
 }

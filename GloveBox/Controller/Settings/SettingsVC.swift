@@ -14,7 +14,8 @@ class SettingsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     
     //MARK: VARIABLES
-    var options = ["Account","Vehicles","Logout"]
+    var options = ["Account","Vehicles","Dark Mode","Logout"]
+    var darkMode = false
     
     //MARK: LIFECYCLE
     override func viewDidLoad() {
@@ -38,6 +39,7 @@ class SettingsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "settingsCell", for: indexPath)
+            cell.textLabel?.textColor = UIColor.black
             
             cell.textLabel?.text = options[indexPath.row]
             cell.textLabel?.textColor = Constants.Colors.headerColor

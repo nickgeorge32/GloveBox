@@ -16,7 +16,7 @@ class AccountVC: UIViewController {
     //MARK: LIFECYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.backgroundColor = UIColor.white
     }
     
     //MARK: ACTIONS

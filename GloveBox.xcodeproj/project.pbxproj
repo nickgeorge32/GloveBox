@@ -28,6 +28,7 @@
 		E46E97E2236B71030074FF13 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46E97E1236B71030074FF13 /* LoginTextField.swift */; };
 		E4724F10236E2DC100C70D26 /* MaintenanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4724F0F236E2DC100C70D26 /* MaintenanceVC.swift */; };
 		E489E1BB236D6EF900298FF0 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E489E1BA236D6EF900298FF0 /* SettingsVC.swift */; };
+		E491C2D52379AAF30052F8BC /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E491C2D42379AAF30052F8BC /* GradientView.swift */; };
 		E4BCB59A2376E88500AF775F /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4BCB5992376E88500AF775F /* Settings.storyboard */; };
 		E4BCB59C2376E90700AF775F /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BCB59B2376E90700AF775F /* AccountVC.swift */; };
 		E4BCB59E2376E91800AF775F /* VehiclesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BCB59D2376E91800AF775F /* VehiclesVC.swift */; };
@@ -66,6 +67,7 @@
 		E46E97E1236B71030074FF13 /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 		E4724F0F236E2DC100C70D26 /* MaintenanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaintenanceVC.swift; sourceTree = "<group>"; };
 		E489E1BA236D6EF900298FF0 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		E491C2D42379AAF30052F8BC /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		E4BCB5992376E88500AF775F /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		E4BCB59B2376E90700AF775F /* AccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
 		E4BCB59D2376E91800AF775F /* VehiclesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesVC.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				E4D5C92E236F57F400B6B971 /* MainCVC.swift */,
 				E4D30A152376B73B00B32F21 /* DriveDataCell.swift */,
 				E4D30A172376B7D600B32F21 /* MaintenanceCell.swift */,
+				E491C2D42379AAF30052F8BC /* GradientView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				E46E97DA236B6AF60074FF13 /* Constants.swift in Sources */,
 				E4BCB5A02376F05000AF775F /* UIViewControllerExtension.swift in Sources */,
 				E4D30A202376CC1300B32F21 /* Maintenance.swift in Sources */,
+				E491C2D52379AAF30052F8BC /* GradientView.swift in Sources */,
 				E46E97DE236B6E200074FF13 /* DataService.swift in Sources */,
 				E489E1BB236D6EF900298FF0 /* SettingsVC.swift in Sources */,
 			);
@@ -524,7 +528,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -578,7 +582,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
