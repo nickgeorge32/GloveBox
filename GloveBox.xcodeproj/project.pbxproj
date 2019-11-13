@@ -27,6 +27,9 @@
 		E46E97E0236B70CF0074FF13 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46E97DF236B70CF0074FF13 /* LoginButton.swift */; };
 		E46E97E2236B71030074FF13 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46E97E1236B71030074FF13 /* LoginTextField.swift */; };
 		E4724F10236E2DC100C70D26 /* MaintenanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4724F0F236E2DC100C70D26 /* MaintenanceVC.swift */; };
+		E474702F237C6F380072B835 /* VehicleHealthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E474702E237C6F380072B835 /* VehicleHealthVC.swift */; };
+		E4747031237C6F480072B835 /* RecallsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4747030237C6F480072B835 /* RecallsVC.swift */; };
+		E4747033237C6F5E0072B835 /* DocumentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4747032237C6F5E0072B835 /* DocumentsVC.swift */; };
 		E489E1BB236D6EF900298FF0 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E489E1BA236D6EF900298FF0 /* SettingsVC.swift */; };
 		E491C2D52379AAF30052F8BC /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E491C2D42379AAF30052F8BC /* GradientView.swift */; };
 		E4BCB59A2376E88500AF775F /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4BCB5992376E88500AF775F /* Settings.storyboard */; };
@@ -67,6 +70,9 @@
 		E46E97DF236B70CF0074FF13 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
 		E46E97E1236B71030074FF13 /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 		E4724F0F236E2DC100C70D26 /* MaintenanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaintenanceVC.swift; sourceTree = "<group>"; };
+		E474702E237C6F380072B835 /* VehicleHealthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleHealthVC.swift; sourceTree = "<group>"; };
+		E4747030237C6F480072B835 /* RecallsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecallsVC.swift; sourceTree = "<group>"; };
+		E4747032237C6F5E0072B835 /* DocumentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsVC.swift; sourceTree = "<group>"; };
 		E489E1BA236D6EF900298FF0 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		E491C2D42379AAF30052F8BC /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		E4BCB5992376E88500AF775F /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
@@ -245,6 +251,9 @@
 				E46E97B0236B606F0074FF13 /* HomeVC.swift */,
 				E46E97B2236B606F0074FF13 /* DriveVC.swift */,
 				E4724F0F236E2DC100C70D26 /* MaintenanceVC.swift */,
+				E474702E237C6F380072B835 /* VehicleHealthVC.swift */,
+				E4747030237C6F480072B835 /* RecallsVC.swift */,
+				E4747032237C6F5E0072B835 /* DocumentsVC.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -432,6 +441,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4BCB59C2376E90700AF775F /* AccountVC.swift in Sources */,
+				E4747033237C6F5E0072B835 /* DocumentsVC.swift in Sources */,
+				E4747031237C6F480072B835 /* RecallsVC.swift in Sources */,
 				E4D30A1C2376CB3F00B32F21 /* TableViewExtensions.swift in Sources */,
 				E46E97E0236B70CF0074FF13 /* LoginButton.swift in Sources */,
 				E46E97B3236B606F0074FF13 /* DriveVC.swift in Sources */,
@@ -456,6 +467,7 @@
 				E491C2D52379AAF30052F8BC /* GradientView.swift in Sources */,
 				E46E97DE236B6E200074FF13 /* DataService.swift in Sources */,
 				E489E1BB236D6EF900298FF0 /* SettingsVC.swift in Sources */,
+				E474702F237C6F380072B835 /* VehicleHealthVC.swift in Sources */,
 				E4F7661F2379F22D000E89AE /* HomeCollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -28,12 +28,12 @@ class HomeVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return cells.count
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = homeCollectionView.dequeueReusableCell(withReuseIdentifier: "homeCell", for: indexPath) as! MainCVC
-        
+
         cell.cellLabel.text = cells[indexPath.row]
-        
+
         cell.contentView.layer.cornerRadius = 2.0
         cell.contentView.layer.borderWidth = 1.0
         cell.contentView.layer.borderColor = UIColor.clear.cgColor
@@ -45,11 +45,39 @@ class HomeVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         cell.layer.masksToBounds = false
         cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
         cell.layer.cornerRadius = 5
-        
+
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0:
+            let healthVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "VehicleHealthVC")
+            healthVC.modalPresentationStyle = .fullScreen
+            presentDetail(healthVC)
+            
+        case 1:
+            let recallsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "RecallsVC")
+            recallsVC.modalPresentationStyle = .fullScreen
+            presentDetail(recallsVC)
+        case 2:
+            let documentsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "DocumentsVC")
+            documentsVC.modalPresentationStyle = .fullScreen
+            presentDetail(documentsVC)
+        default:
+            print("")
+        }
+    }
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width - 20, height: 300)
     }
+}
+
+extension HomeVC: HomeCollectionLayoutDelegate {
+  func collectionView(
+      _ collectionView: UICollectionView,
+      heightForPhotoAtIndexPath indexPath:IndexPath) -> CGFloat {
+    return 100
+  }
 }
