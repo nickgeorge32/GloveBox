@@ -12,11 +12,13 @@ class AccountVC: UIViewController {
     //MARK: OUTLETS
     
     //MARK: VARIABLES
-
+    var userProfile = Profile.init()
     //MARK: LIFECYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
+        
+        userProfile.getProfile()
     }
     
     //MARK: ACTIONS

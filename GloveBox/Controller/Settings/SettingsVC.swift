@@ -14,7 +14,7 @@ class SettingsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     
     //MARK: VARIABLES
-    var options = ["Account","Vehicles","Dark Mode","Logout"]
+    var options = ["Account","Vehicles","Logout"]
     var darkMode = false
     
     //MARK: LIFECYCLE
