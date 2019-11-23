@@ -17,18 +17,6 @@ struct Profile {
     let dob: String?
     let devices: [String]?
     
-    init?(dictionary: [String: Any]) {
-        guard let name = dictionary["name"] as? String else { return nil }
-        self.name = name
-        
-        self.provider = dictionary["provider"] as? String
-        self.email = dictionary["email"] as? String
-        self.verified = dictionary["verified"] as? Bool
-        self.dob = dictionary["dob"] as? String
-        self.devices = dictionary["devices"] as? [String]
-
-    }
-    
     init() {
         self.name = ""
         self.provider = ""
@@ -38,7 +26,19 @@ struct Profile {
         self.devices = []
     }
     
-    init(name: String, provider: String, email: String, verified: Bool, dob: String, sector: String, subscription: String, purchaseDate: String, expirationDate: String, devices: [String]) {
+    init?(dictionary: [String: Any]) {
+        guard let name = dictionary["name"] as? String,
+        let provider = dictionary["provider"] as? String, let email = dictionary["email"] as? String, let verified = dictionary["verified"] as? Bool, let dob = dictionary["dob"] as? String, let devices = dictionary["devices"] as? [String] else { return nil }
+        self.name = name
+        self.email = email
+        self.provider = provider
+        self.verified = verified
+        self.dob = dob
+        self.devices = devices
+
+    }
+    
+    init(name: String, provider: String, email: String, verified: Bool, dob: String, devices: [String]) {
         self.name = name
         self.provider = provider
         self.email = email
@@ -61,17 +61,4 @@ struct Profile {
         
         return myProfile
     }
-    
-    func getProfile() {
-        let profileRef = Constants.FIRESTORE_DB_CURRENT_USER
-        profileRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                let doc = document.data()
-                print(doc)
-            } else {
-                print("Document does not exist")
-            }
-        }
-    }
-    
 }

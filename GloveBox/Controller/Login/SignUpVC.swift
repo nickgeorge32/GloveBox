@@ -50,8 +50,8 @@ class SignUpVC: UIViewController {
                 self.activityIndicator.isHidden = true
                 self.activityIndicator.stopAnimating()
                 
-                let myProfile = Profile.init(name: self.fullNameField.text!, provider: Auth.auth().currentUser?.providerID ?? "", email: self.emailField.text!, verified: false, dob: "", sector: "", subscription: "", purchaseDate: "", expirationDate: "", devices: [String(UIDevice.current.name)])
-                
+                let myProfile = Profile.init(name: self.fullNameField.text!, provider: Auth.auth().currentUser?.providerID ?? "", email: self.emailField.text!, verified: false, dob: "", devices: [String(UIDevice.current.name)])
+                                
                 let myProfileDict = myProfile.createProfile(profile: myProfile)
                 
                 self.defaults.set(myProfileDict, forKey: "profile")
