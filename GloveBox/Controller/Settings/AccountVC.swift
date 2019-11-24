@@ -23,7 +23,6 @@ class AccountVC: FormViewController {
     //MARK: LIFECYCLE
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
     }
     
     override func viewDidLoad() {
@@ -156,13 +155,10 @@ class AccountVC: FormViewController {
                 if userProfile.dob != "" {
                     date = dateFormatter.date(from: userProfile.dob!)!
                     $0.value = date
-                    
                 } else {
                     date = dateFormatter.date(from: isoDate)!
                     $0.value = date
-                    
                 }
-                
                 $0.title = "DoB"
             }
             
