@@ -155,7 +155,7 @@ class AccountVC: FormViewController {
                 if userProfile.dob != "" {
                     date = dateFormatter.date(from: userProfile.dob!)!
                     $0.value = date
-                } else {
+//                } else {
                     date = dateFormatter.date(from: isoDate)!
                     $0.value = date
                 }

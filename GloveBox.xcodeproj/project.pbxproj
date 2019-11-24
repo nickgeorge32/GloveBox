@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C5A32AC7CF03505EE5D3BCA6 /* Pods_GloveBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E2D84C55109466E307DF3B /* Pods_GloveBox.framework */; };
+		E432DDE0238ABD8400ADC3EE /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E432DDDF238ABD8400ADC3EE /* Vehicle.swift */; };
 		E44D6293236B940E00B42073 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44D6292236B940E00B42073 /* Profile.swift */; };
 		E46E97AD236B606F0074FF13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46E97AC236B606F0074FF13 /* AppDelegate.swift */; };
 		E46E97AF236B606F0074FF13 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46E97AE236B606F0074FF13 /* SceneDelegate.swift */; };
@@ -49,6 +50,7 @@
 		06141EF594E13A3776B48619 /* Pods-GloveBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GloveBox.debug.xcconfig"; path = "Target Support Files/Pods-GloveBox/Pods-GloveBox.debug.xcconfig"; sourceTree = "<group>"; };
 		541665E0FED69F4734284D78 /* Pods-GloveBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GloveBox.release.xcconfig"; path = "Target Support Files/Pods-GloveBox/Pods-GloveBox.release.xcconfig"; sourceTree = "<group>"; };
 		E2E2D84C55109466E307DF3B /* Pods_GloveBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GloveBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E432DDDF238ABD8400ADC3EE /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
 		E44D6292236B940E00B42073 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		E46E97A9236B606F0074FF13 /* CarCompanion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarCompanion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E46E97AC236B606F0074FF13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				E44D6292236B940E00B42073 /* Profile.swift */,
 				E4D30A1D2376CC0900B32F21 /* Drive.swift */,
 				E4D30A1F2376CC1300B32F21 /* Maintenance.swift */,
+				E432DDDF238ABD8400ADC3EE /* Vehicle.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -458,6 +461,7 @@
 				E4D30A162376B73B00B32F21 /* DriveDataCell.swift in Sources */,
 				E4BCB59E2376E91800AF775F /* VehiclesVC.swift in Sources */,
 				E46E97AF236B606F0074FF13 /* SceneDelegate.swift in Sources */,
+				E432DDE0238ABD8400ADC3EE /* Vehicle.swift in Sources */,
 				E4D30A182376B7D600B32F21 /* MaintenanceCell.swift in Sources */,
 				E46E97E2236B71030074FF13 /* LoginTextField.swift in Sources */,
 				E4D30A1E2376CC0900B32F21 /* Drive.swift in Sources */,
@@ -621,7 +625,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.5;
+				MARKETING_VERSION = 0.0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.simpledevstudios.GloveBox;
 				PRODUCT_NAME = CarCompanion;
 				SWIFT_VERSION = 5.0;
@@ -642,7 +646,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.5;
+				MARKETING_VERSION = 0.0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.simpledevstudios.GloveBox;
 				PRODUCT_NAME = CarCompanion;
 				SWIFT_VERSION = 5.0;

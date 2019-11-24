@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Eureka
 
 class VehiclesVC: UIViewController {
     //MARK: OUTLETS
