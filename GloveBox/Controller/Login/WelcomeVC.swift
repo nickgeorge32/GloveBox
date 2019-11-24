@@ -14,6 +14,13 @@ class WelcomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let alert = UIAlertController(title: "Beta", message: "This app is currently under development. Accounts and data may possibly be erased and therefore be need to be created again.", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
+            
+        }
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
+        
         Auth.auth().addStateDidChangeListener { (auth, user) in
             if Auth.auth().currentUser != nil {
                 self.performSegue(withIdentifier: "welcomeToMain", sender: nil)

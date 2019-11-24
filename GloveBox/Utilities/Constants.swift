@@ -12,7 +12,8 @@ import Firebase
 struct Constants {
     static let FIRESTORE_DB = Firestore.firestore()
     static let FIRESTORE_DB_USERS = Firestore.firestore().collection("users")
-    static let FIRESTORE_DB_CURRENT_USER = Firestore.firestore().collection("users").document((Auth.auth().currentUser?.uid)!).collection("Personal").document("Profile")
+    static let FIRESTORE_DB_CURRENT_USER_DOCUMENT = Firestore.firestore().collection("users").document((Auth.auth().currentUser?.uid)!)
+    static let FIRESTORE_DB_CURRENT_USER_PROFILE = Firestore.firestore().collection("users").document((Auth.auth().currentUser?.uid)!).collection("Personal").document("Profile")
 
     
     struct Colors {

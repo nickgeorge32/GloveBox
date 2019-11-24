@@ -18,6 +18,7 @@ class AccountVC: FormViewController {
     var userProfile = Profile.init()
     var editSaveToggle = false
     var devices = [String]()
+    let user = Auth.auth().currentUser
     
     //MARK: LIFECYCLE
     override func viewWillAppear(_ animated: Bool) {
@@ -32,9 +33,7 @@ class AccountVC: FormViewController {
         DataService.instance.getProfile { (profile) in
             self.userProfile = profile
             self.devices = profile.devices!
-            
-            print(self.userProfile)
-            
+                        
             self.setupForm()
         }
     }
@@ -59,6 +58,9 @@ class AccountVC: FormViewController {
             }
             
             // 3. Grab the value from the text field, and print it when the user clicks OK.
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
+                
+            }))
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
                 let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
                 let textField2 = alert?.textFields![1]
@@ -72,7 +74,6 @@ class AccountVC: FormViewController {
                         }))
                         self.present(alert, animated: true, completion: nil)
                     } else {
-                        print("reauthenticated")
                         self.editSaveBtn.setTitle("Save", for: .normal)
                         self.editSaveToggle = true
                         
@@ -97,10 +98,12 @@ class AccountVC: FormViewController {
             
             let nameRow: TextRow = form.rowBy(tag: "name")!
             let nameValue = nameRow.value!
-            let emailRow: TextRow = form.rowBy(tag: "email")!
+            let emailRow: EmailRow = form.rowBy(tag: "email")!
             let emailValue = emailRow.value!
             let dobRow: DateRow = form.rowBy(tag: "dob")!
             let dobValue = (dobRow.value)!
+            let passwordRow: PasswordRow = form.rowBy(tag: "password")!
+            let passwordValue = passwordRow.value
             
             if !devices.contains(String(UIDevice.current.name)) {
                 devices.append(String(UIDevice.current.name))
@@ -112,7 +115,17 @@ class AccountVC: FormViewController {
             
             DataService.instance.updateDBUser(firestoreRef: Constants.FIRESTORE_DB.document("users/\((Auth.auth().currentUser?.uid)!)/Personal/Profile"), userData: myProfileDict)
             
-            let user = Auth.auth().currentUser
+            if passwordValue != nil {
+                user?.updatePassword(to: passwordValue!, completion: { (error) in
+                    if error != nil {
+                        let alert = UIAlertController(title: "Error", message: "Unable to update password, please try again later.", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                            
+                        }))
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                })
+            }
             user?.updateEmail(to: emailValue, completion: { (error) in
                 if error != nil {
                     let alert = UIAlertController(title: "Error", message: "Unable to update email, please try again later.", preferredStyle: .alert)
@@ -142,31 +155,83 @@ class AccountVC: FormViewController {
                 if userProfile.dob != "" {
                     date = dateFormatter.date(from: userProfile.dob!)!
                     $0.value = date
-
+                    
                 } else {
                     date = dateFormatter.date(from: isoDate)!
                     $0.value = date
-
+                    
                 }
-
+                
                 $0.title = "DoB"
             }
             
-            <<< TextRow("email") {
+            <<< EmailRow("email") {
                 $0.title = "Email"
                 $0.value = userProfile.email
-        }
-        
+                $0.add(rule: RuleRequired())
+                $0.add(rule: RuleEmail())
+                $0.validationOptions = .validatesOnChangeAfterBlurred
+            }
+            .cellUpdate { cell, row in
+                if !row.isValid {
+                    cell.titleLabel?.textColor = .red
+                }
+            }
+            
+            <<< PasswordRow("password") {
+                $0.title = "Password"
+                $0.add(rule: RuleMinLength(minLength: 6))
+                $0.add(rule: RuleMaxLength(maxLength: 12))
+            }
+            .cellUpdate { cell, row in
+                if !row.isValid {
+                    cell.titleLabel?.textColor = .red
+                }
+            }
+            
             <<< TextRow("verified") {
                 $0.title = "Verified"
                 $0.value = "Not Verified"
                 $0.disabled = true
-        }
-        
-        +++ Section("Devices")
+            }
+            
+            +++ Section("Devices")
             <<< TextRow() {
                 $0.title = UIDevice.current.name + "(This Device)"
-        }
+            }
+            
+            +++ Section()
+            <<< ButtonRow() {
+                $0.title = "Delete Account"
+            }.onCellSelection({ (cell, row) in
+                //Delete the user document
+                Constants.FIRESTORE_DB_CURRENT_USER_PROFILE.delete() { error in
+                    if let error = error {
+                        //error deleting document
+                        print("Error removing document: \(error)")
+                    } else {
+                        //document deleted, delete user
+                        self.user?.delete(completion: { (error) in
+                            if let error = error {
+                            // An error happened deleting the user
+                            let alert = UIAlertController(title: "Error", message: "Unable to delete account, please try again later.", preferredStyle: .alert)
+                            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                                
+                            }))
+                            self.present(alert, animated: true, completion: nil)
+                            } else {
+                                //no errors, document and user deleted, segue to WelcomeVC
+                                let storyboard = UIStoryboard(name: "Login", bundle: nil)
+                                let welcomeVC = storyboard.instantiateViewController(identifier: "WelcomeVC")
+                                welcomeVC.modalPresentationStyle = .fullScreen
+                                self.present(welcomeVC, animated: true, completion: nil)
+                            }
+                        })
+                    }
+                }
+            }).cellUpdate({ (cell, row) in
+                cell.textLabel?.textColor = UIColor.red
+            })
         
         for row in form.rows {
             row.baseCell.isUserInteractionEnabled = false
@@ -182,5 +247,5 @@ extension Date
         dateFormatter.dateFormat = format
         return dateFormatter.string(from: self)
     }
-
+    
 }
