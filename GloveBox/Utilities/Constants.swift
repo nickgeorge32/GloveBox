@@ -15,6 +15,13 @@ struct Constants {
     static let FIRESTORE_DB_CURRENT_USER_DOCUMENT = Firestore.firestore().collection("users").document((Auth.auth().currentUser?.uid)!)
     static let FIRESTORE_DB_CURRENT_USER_PROFILE = Firestore.firestore().collection("users").document((Auth.auth().currentUser?.uid)!).collection("Personal").document("Profile")
 
+    //MARK: VEHICLE
+    static let YEAR = ["", "2019", "2018"]
+    static let MAKE = ["", "Acura", "Honda"]
+    static let MODEL = ["", "Civic"]
+    static let TRIM = ["", "EX"]
+    static let COLOR = ["","Red", "White"]
+    
     
     struct Colors {
         static let headerColor = #colorLiteral(red: 0.007843137255, green: 0.1607843137, blue: 0.462745098, alpha: 1)

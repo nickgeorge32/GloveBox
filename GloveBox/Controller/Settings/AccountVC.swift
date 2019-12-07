@@ -12,19 +12,13 @@ import Firebase
 
 class AccountVC: FormViewController {
     //MARK: OUTLETS
-    @IBOutlet weak var editSaveBtn: UIButton!
     
     //MARK: VARIABLES
     var userProfile = Profile.init()
-    var editSaveToggle = false
     var devices = [String]()
     let user = Auth.auth().currentUser
     
-    //MARK: LIFECYCLE
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-    }
-    
+    //MARK: LIFECYCLE    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
@@ -32,7 +26,7 @@ class AccountVC: FormViewController {
         DataService.instance.getProfile { (profile) in
             self.userProfile = profile
             self.devices = profile.devices!
-                        
+            
             self.setupForm()
         }
     }
@@ -40,101 +34,6 @@ class AccountVC: FormViewController {
     //MARK: ACTIONS
     @IBAction func back(_ sender: Any) {
         dismissDetail()
-    }
-    
-    @IBAction func editSave(_ sender: Any) {
-        if editSaveToggle == false {
-            //1. Create the alert controller.
-            let alert = UIAlertController(title: "Re-Authenticate", message: "Enter your old email and password", preferredStyle: .alert)
-            
-            //2. Add the text field. You can configure it however you need.
-            alert.addTextField { (textField) in
-                textField.placeholder = "Email"
-            }
-            alert.addTextField { (textfield) in
-                textfield.placeholder = "Password"
-                textfield.isSecureTextEntry = true
-            }
-            
-            // 3. Grab the value from the text field, and print it when the user clicks OK.
-            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
-                
-            }))
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
-                let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
-                let textField2 = alert?.textFields![1]
-                
-                let credential = EmailAuthProvider.credential(withEmail: (alert?.textFields![0].text!)!, password: (alert?.textFields![1].text!)!)
-                Auth.auth().currentUser?.reauthenticate(with: credential, completion: { (result, error) in
-                    if let error = error {
-                        let alert = UIAlertController(title: "Error", message: "Unable to authenticate user credentials, please try again.", preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-                            
-                        }))
-                        self.present(alert, animated: true, completion: nil)
-                    } else {
-                        self.editSaveBtn.setTitle("Save", for: .normal)
-                        self.editSaveToggle = true
-                        
-                        for row in self.form.rows {
-                            row.baseCell.isUserInteractionEnabled = true
-                        }
-                    }
-                })
-            }))
-            
-            // 4. Present the alert.
-            self.present(alert, animated: true, completion: nil)
-            
-        } else {
-            editSaveBtn.setTitle("Edit", for: .normal)
-            editSaveToggle = false
-            
-            for row in form.rows {
-                row.baseCell.isUserInteractionEnabled = false
-                row.baseCell.cellResignFirstResponder()
-            }
-            
-            let nameRow: TextRow = form.rowBy(tag: "name")!
-            let nameValue = nameRow.value!
-            let emailRow: EmailRow = form.rowBy(tag: "email")!
-            let emailValue = emailRow.value!
-            let dobRow: DateRow = form.rowBy(tag: "dob")!
-            let dobValue = (dobRow.value)!
-            let passwordRow: PasswordRow = form.rowBy(tag: "password")!
-            let passwordValue = passwordRow.value
-            
-            if !devices.contains(String(UIDevice.current.name)) {
-                devices.append(String(UIDevice.current.name))
-            }
-            
-            let myProfile = Profile.init(name: nameValue, provider: Auth.auth().currentUser!.providerID, email: emailValue, verified: userProfile.verified!, dob: String(describing: dobValue.toString(dateFormat: "yyyy-MM-dd")), devices: devices)
-            
-            let myProfileDict = myProfile.createProfile(profile: myProfile)
-            
-            DataService.instance.updateDBUser(firestoreRef: Constants.FIRESTORE_DB.document("users/\((Auth.auth().currentUser?.uid)!)/Personal/Profile"), userData: myProfileDict)
-            
-            if passwordValue != nil {
-                user?.updatePassword(to: passwordValue!, completion: { (error) in
-                    if error != nil {
-                        let alert = UIAlertController(title: "Error", message: "Unable to update password, please try again later.", preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-                            
-                        }))
-                        self.present(alert, animated: true, completion: nil)
-                    }
-                })
-            }
-            user?.updateEmail(to: emailValue, completion: { (error) in
-                if error != nil {
-                    let alert = UIAlertController(title: "Error", message: "Unable to update email, please try again later.", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-                        
-                    }))
-                    self.present(alert, animated: true, completion: nil)
-                }
-            })
-        }
     }
     
     //MARK: FORM
@@ -155,42 +54,46 @@ class AccountVC: FormViewController {
                 if userProfile.dob != "" {
                     date = dateFormatter.date(from: userProfile.dob!)!
                     $0.value = date
-//                } else {
+                } else {
                     date = dateFormatter.date(from: isoDate)!
                     $0.value = date
                 }
                 $0.title = "DoB"
+                $0.cell.detailTextLabel?.textColor = UIColor.black
             }
             
             <<< EmailRow("email") {
                 $0.title = "Email"
                 $0.value = userProfile.email
-                $0.add(rule: RuleRequired())
                 $0.add(rule: RuleEmail())
-                $0.validationOptions = .validatesOnChangeAfterBlurred
-            }
-            .cellUpdate { cell, row in
-                if !row.isValid {
-                    cell.titleLabel?.textColor = .red
-                }
+                $0.baseCell.isUserInteractionEnabled = false
             }
             
-            <<< PasswordRow("password") {
-                $0.title = "Password"
-                $0.add(rule: RuleMinLength(minLength: 6))
-                $0.add(rule: RuleMaxLength(maxLength: 12))
-            }
-            .cellUpdate { cell, row in
-                if !row.isValid {
-                    cell.titleLabel?.textColor = .red
-                }
-            }
-            
-            <<< TextRow("verified") {
+            <<< LabelRow("verified") {
                 $0.title = "Verified"
-                $0.value = "Not Verified"
-                $0.disabled = true
-            }
+                $0.cell.detailTextLabel?.textColor = UIColor.black
+                if Auth.auth().currentUser!.isEmailVerified {
+                    $0.value = "Verified"
+                } else {
+                    $0.value = "Verify"
+                    $0.cell.detailTextLabel?.textColor = UIColor.systemBlue
+                }
+            }.onCellSelection({ (cell, row) in
+                if Auth.auth().currentUser!.isEmailVerified {
+                    
+                } else {
+                    Auth.auth().currentUser?.sendEmailVerification(completion: { (error) in
+                        if let error = error {
+                            print(error)
+                            let alert = UIAlertController(title: "Error", message: "Unable to send verification email, please try again later.", preferredStyle: .alert)
+                            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                                
+                            }))
+                            self.present(alert, animated: true, completion: nil)
+                        }
+                    })
+                }
+            })
             
             +++ Section("Devices")
             <<< TextRow() {
@@ -198,6 +101,74 @@ class AccountVC: FormViewController {
             }
             
             +++ Section()
+            <<< ButtonRow() {
+                $0.title = "Save Changes"
+            }.onCellSelection({ (cell, row) in
+                //1. Create the alert controller.
+                let alert = UIAlertController(title: "Re-Authenticate", message: "Enter your old email and password", preferredStyle: .alert)
+                
+                //2. Add the text field. You can configure it however you need.
+                alert.addTextField { (textField) in
+                    textField.placeholder = "Email"
+                }
+                alert.addTextField { (textfield) in
+                    textfield.placeholder = "Password"
+                    textfield.isSecureTextEntry = true
+                }
+                
+                // 3. Grab the value from the text field, and print it when the user clicks OK.
+                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
+                    
+                }))
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+                    let credential = EmailAuthProvider.credential(withEmail: (alert?.textFields![0].text!)!, password: (alert?.textFields![1].text!)!)
+                    Auth.auth().currentUser?.reauthenticate(with: credential, completion: { (result, error) in
+                        if let error = error {
+                            let alert = UIAlertController(title: "Error", message: "Unable to authenticate user credentials, please try again.", preferredStyle: .alert)
+                            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                                
+                            }))
+                            self.present(alert, animated: true, completion: nil)
+                        } else {
+                            for row in self.form.rows {
+                                row.baseCell.isUserInteractionEnabled = true
+                            }
+                        }
+                    })
+                }))
+                
+                // 4. Present the alert.
+                self.present(alert, animated: true, completion: nil)
+            })
+            
+            +++ Section()
+            
+            <<< ButtonRow() {
+                $0.title = "Update Email"
+            }.onCellSelection({ (cell, row) in
+                let alert = UIAlertController(title: "Update Email", message: "Please enter your new email.", preferredStyle: .alert)
+                alert.addTextField { (textfield) in
+                    textfield.placeholder = "New Email"
+                }
+                alert.addAction(UIAlertAction(title: "Update", style: .default, handler: { (action) in
+                    
+                }))
+                self.present(alert, animated: true, completion: nil)
+            })
+            
+            <<< ButtonRow() {
+                $0.title = "Change Password"
+            }.onCellSelection({ (cell, row) in
+                let alert = UIAlertController(title: "Change Password", message: "Please enter your new password", preferredStyle: .alert)
+                alert.addTextField { (textfield) in
+                    textfield.placeholder = "New Password"
+                }
+                alert.addAction(UIAlertAction(title: "Change", style: .default, handler: { (action) in
+                    
+                }))
+                self.present(alert, animated: true, completion: nil)
+            })
+            
             <<< ButtonRow() {
                 $0.title = "Delete Account"
             }.onCellSelection({ (cell, row) in
@@ -210,12 +181,12 @@ class AccountVC: FormViewController {
                         //document deleted, delete user
                         self.user?.delete(completion: { (error) in
                             if let error = error {
-                            // An error happened deleting the user
-                            let alert = UIAlertController(title: "Error", message: "Unable to delete account, please try again later.", preferredStyle: .alert)
-                            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-                                
-                            }))
-                            self.present(alert, animated: true, completion: nil)
+                                // An error happened deleting the user
+                                let alert = UIAlertController(title: "Error", message: "Unable to delete account, please try again later.", preferredStyle: .alert)
+                                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                                    
+                                }))
+                                self.present(alert, animated: true, completion: nil)
                             } else {
                                 //no errors, document and user deleted, segue to WelcomeVC
                                 let storyboard = UIStoryboard(name: "Login", bundle: nil)
@@ -229,10 +200,6 @@ class AccountVC: FormViewController {
             }).cellUpdate({ (cell, row) in
                 cell.textLabel?.textColor = UIColor.red
             })
-        
-        for row in form.rows {
-            row.baseCell.isUserInteractionEnabled = false
-        }
     }
 }
 

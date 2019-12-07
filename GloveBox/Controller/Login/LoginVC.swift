@@ -18,11 +18,11 @@ class LoginVC: UIViewController {
     
     //MARK: VARIABLES
     let defaults = UserDefaults.standard
-
+    
     //MARK: LIFECYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         activityIndicator.isHidden = true
         
         if defaults.string(forKey: "email") != nil {
@@ -42,6 +42,14 @@ class LoginVC: UIViewController {
     //MARK: ACTIONS
     @IBAction func closeBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func forgotPassword(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Login", bundle: nil)
+        let forgotPasswordVC = storyboard.instantiateViewController(identifier: "ForgotPassword")
+        forgotPasswordVC.modalPresentationStyle = .fullScreen
+        presentDetail(forgotPasswordVC)
+        
     }
     
     @IBAction func login(_ sender: Any) {
@@ -66,9 +74,11 @@ class LoginVC: UIViewController {
             } else {
                 self.activityIndicator.stopAnimating()
                 self.activityIndicator.isHidden = true
-                Helper.instance.displayAlert(alertTitle: "Error", message: (error?.localizedDescription)!, actionTitle: "OK", style: .default, handler: { _ in
+                let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
                     
-                })
+                }))
+                self.present(alert, animated: true, completion: nil)
             }
         }
     }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C5A32AC7CF03505EE5D3BCA6 /* Pods_GloveBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E2D84C55109466E307DF3B /* Pods_GloveBox.framework */; };
 		E432DDE0238ABD8400ADC3EE /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E432DDDF238ABD8400ADC3EE /* Vehicle.swift */; };
+		E44BB767239C2E6500710088 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44BB766239C2E6500710088 /* ForgotPasswordVC.swift */; };
 		E44D6293236B940E00B42073 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44D6292236B940E00B42073 /* Profile.swift */; };
 		E46E97AD236B606F0074FF13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46E97AC236B606F0074FF13 /* AppDelegate.swift */; };
 		E46E97AF236B606F0074FF13 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46E97AE236B606F0074FF13 /* SceneDelegate.swift */; };
@@ -42,6 +43,7 @@
 		E4D30A1C2376CB3F00B32F21 /* TableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D30A1B2376CB3F00B32F21 /* TableViewExtensions.swift */; };
 		E4D30A1E2376CC0900B32F21 /* Drive.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D30A1D2376CC0900B32F21 /* Drive.swift */; };
 		E4D30A202376CC1300B32F21 /* Maintenance.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D30A1F2376CC1300B32F21 /* Maintenance.swift */; };
+		E4D57AD4238C6F5A00B45C54 /* AddVehicleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D57AD3238C6F5A00B45C54 /* AddVehicleVC.swift */; };
 		E4D5C92F236F57F400B6B971 /* MainCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D5C92E236F57F400B6B971 /* MainCVC.swift */; };
 		E4F7661F2379F22D000E89AE /* HomeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F7661E2379F22D000E89AE /* HomeCollectionView.swift */; };
 /* End PBXBuildFile section */
@@ -51,6 +53,7 @@
 		541665E0FED69F4734284D78 /* Pods-GloveBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GloveBox.release.xcconfig"; path = "Target Support Files/Pods-GloveBox/Pods-GloveBox.release.xcconfig"; sourceTree = "<group>"; };
 		E2E2D84C55109466E307DF3B /* Pods_GloveBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GloveBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E432DDDF238ABD8400ADC3EE /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
+		E44BB766239C2E6500710088 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		E44D6292236B940E00B42073 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		E46E97A9236B606F0074FF13 /* CarCompanion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarCompanion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E46E97AC236B606F0074FF13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +89,7 @@
 		E4D30A1B2376CB3F00B32F21 /* TableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewExtensions.swift; sourceTree = "<group>"; };
 		E4D30A1D2376CC0900B32F21 /* Drive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drive.swift; sourceTree = "<group>"; };
 		E4D30A1F2376CC1300B32F21 /* Maintenance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Maintenance.swift; sourceTree = "<group>"; };
+		E4D57AD3238C6F5A00B45C54 /* AddVehicleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVehicleVC.swift; sourceTree = "<group>"; };
 		E4D5C92E236F57F400B6B971 /* MainCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCVC.swift; sourceTree = "<group>"; };
 		E4F7661E2379F22D000E89AE /* HomeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -234,6 +238,7 @@
 				E46E97D1236B62410074FF13 /* WelcomeVC.swift */,
 				E46E97D5236B6A9E0074FF13 /* SignUpVC.swift */,
 				E46E97D7236B6AAB0074FF13 /* LoginVC.swift */,
+				E44BB766239C2E6500710088 /* ForgotPasswordVC.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -244,6 +249,7 @@
 				E489E1BA236D6EF900298FF0 /* SettingsVC.swift */,
 				E4BCB59B2376E90700AF775F /* AccountVC.swift */,
 				E4BCB59D2376E91800AF775F /* VehiclesVC.swift */,
+				E4D57AD3238C6F5A00B45C54 /* AddVehicleVC.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -450,12 +456,14 @@
 				E46E97E0236B70CF0074FF13 /* LoginButton.swift in Sources */,
 				E46E97B3236B606F0074FF13 /* DriveVC.swift in Sources */,
 				E46E97D2236B62410074FF13 /* WelcomeVC.swift in Sources */,
+				E4D57AD4238C6F5A00B45C54 /* AddVehicleVC.swift in Sources */,
 				E44D6293236B940E00B42073 /* Profile.swift in Sources */,
 				E46E97D8236B6AAB0074FF13 /* LoginVC.swift in Sources */,
 				E46E97B1236B606F0074FF13 /* HomeVC.swift in Sources */,
 				E46E97AD236B606F0074FF13 /* AppDelegate.swift in Sources */,
 				E46E97DC236B6E100074FF13 /* Helper.swift in Sources */,
 				E46E97D6236B6A9E0074FF13 /* SignUpVC.swift in Sources */,
+				E44BB767239C2E6500710088 /* ForgotPasswordVC.swift in Sources */,
 				E4D5C92F236F57F400B6B971 /* MainCVC.swift in Sources */,
 				E4724F10236E2DC100C70D26 /* MaintenanceVC.swift in Sources */,
 				E4D30A162376B73B00B32F21 /* DriveDataCell.swift in Sources */,

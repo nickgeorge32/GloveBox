@@ -18,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         
+        Auth.auth().currentUser?.getIDTokenForcingRefresh(true)
+        Auth.auth().currentUser?.reload()
+        
         return true
     }
 

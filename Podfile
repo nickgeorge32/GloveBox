@@ -19,6 +19,8 @@ pod 'Crashlytics'
 #pod 'Firebase/InAppMessagingDisplay'
 pod 'Firebase/Performance'
 
+pod 'Alamofire'
+pod 'SwiftyJSON'
 pod 'Eureka'
 
 end
