@@ -146,27 +146,106 @@ class AccountVC: FormViewController {
             <<< ButtonRow() {
                 $0.title = "Update Email"
             }.onCellSelection({ (cell, row) in
-                let alert = UIAlertController(title: "Update Email", message: "Please enter your new email.", preferredStyle: .alert)
-                alert.addTextField { (textfield) in
+                let emailAlert = UIAlertController(title: "Update Email", message: "Please enter your new email.", preferredStyle: .alert)
+                emailAlert.addTextField { (textfield) in
                     textfield.placeholder = "New Email"
                 }
-                alert.addAction(UIAlertAction(title: "Update", style: .default, handler: { (action) in
-                    
+                emailAlert.addAction(UIAlertAction(title: "Update", style: .default, handler: { (action) in
+                    if emailAlert.textFields![0].text != "" {
+                        let authAlert = UIAlertController(title: "Re-Authenticate", message: "Enter your old email and password", preferredStyle: .alert)
+                        
+                        //2. Add the text field. You can configure it however you need.
+                        authAlert.addTextField { (textField) in
+                            textField.placeholder = "Email"
+                        }
+                        authAlert.addTextField { (textfield) in
+                            textfield.placeholder = "Password"
+                            textfield.isSecureTextEntry = true
+                        }
+                        
+                        // 3. Grab the value from the text field, and print it when the user clicks OK.
+                        authAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
+                            
+                        }))
+                        authAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak authAlert] (_) in
+                            let credential = EmailAuthProvider.credential(withEmail: (authAlert?.textFields![0].text!)!, password: (authAlert?.textFields![1].text!)!)
+                            Auth.auth().currentUser?.reauthenticate(with: credential, completion: { (result, error) in
+                                if let error = error {
+                                    let alert = UIAlertController(title: "Error", message: "Unable to authenticate user credentials, please try again.", preferredStyle: .alert)
+                                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                                        
+                                    }))
+                                    self.present(alert, animated: true, completion: nil)
+                                } else {
+                                    Auth.auth().currentUser?.updateEmail(to: emailAlert.textFields![0].text!, completion: { (error) in
+                                        
+                                    })
+                                }
+                            })
+                        }))
+                        
+                        // 4. Present the alert.
+                        self.present(authAlert, animated: true, completion: nil)
+                        
+                        Auth.auth().currentUser?.updateEmail(to: "nick@gmail.com", completion: { (error) in
+                            
+                        })
+                    } else {
+                        
+                    }
                 }))
-                self.present(alert, animated: true, completion: nil)
+                self.present(emailAlert, animated: true, completion: nil)
             })
             
             <<< ButtonRow() {
                 $0.title = "Change Password"
             }.onCellSelection({ (cell, row) in
-                let alert = UIAlertController(title: "Change Password", message: "Please enter your new password", preferredStyle: .alert)
-                alert.addTextField { (textfield) in
+                let passwordAlert = UIAlertController(title: "Change Password", message: "Please enter your new password", preferredStyle: .alert)
+                passwordAlert.addTextField { (textfield) in
                     textfield.placeholder = "New Password"
+                    textfield.isSecureTextEntry = true
                 }
-                alert.addAction(UIAlertAction(title: "Change", style: .default, handler: { (action) in
-                    
+                passwordAlert.addAction(UIAlertAction(title: "Change", style: .default, handler: { (action) in
+                    if passwordAlert.textFields![0].text != nil {
+                        let authAlert = UIAlertController(title: "Re-Authenticate", message: "Enter your old email and password", preferredStyle: .alert)
+                        
+                        //2. Add the text field. You can configure it however you need.
+                        authAlert.addTextField { (textField) in
+                            textField.placeholder = "Email"
+                        }
+                        authAlert.addTextField { (textfield) in
+                            textfield.placeholder = "Password"
+                            textfield.isSecureTextEntry = true
+                        }
+                        
+                        // 3. Grab the value from the text field, and print it when the user clicks OK.
+                        authAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
+                            
+                        }))
+                        authAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak authAlert] (_) in
+                            let credential = EmailAuthProvider.credential(withEmail: (authAlert?.textFields![0].text!)!, password: (authAlert?.textFields![1].text!)!)
+                            Auth.auth().currentUser?.reauthenticate(with: credential, completion: { (result, error) in
+                                if let error = error {
+                                    let alert = UIAlertController(title: "Error", message: "Unable to authenticate user credentials, please try again.", preferredStyle: .alert)
+                                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                                        
+                                    }))
+                                    self.present(alert, animated: true, completion: nil)
+                                } else {
+                                    Auth.auth().currentUser?.updatePassword(to: passwordAlert.textFields![0].text!, completion: { (error) in
+                                        
+                                    })
+                                }
+                            })
+                        }))
+                        
+                        // 4. Present the alert.
+                        self.present(authAlert, animated: true, completion: nil)
+                    } else {
+                        
+                    }
                 }))
-                self.present(alert, animated: true, completion: nil)
+                self.present(passwordAlert, animated: true, completion: nil)
             })
             
             <<< ButtonRow() {
